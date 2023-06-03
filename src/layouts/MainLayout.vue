@@ -159,9 +159,7 @@
 
               <q-item-section side>
                 <div class="row">
-                  <a :href="itemModelo" download="data.json">
-                    <q-icon :href="itemModelo" style="cursor: pointer; padding-right: 5px"  size="sm" name="download" />
-                  </a>
+                  <q-icon @click="downloadModelo" style="cursor: pointer; padding-right: 5px"  size="sm" name="download" />
                 </div>
               </q-item-section>
             </q-item>
@@ -199,7 +197,7 @@ export default defineComponent({
 
   methods: {
     downloadModelo(){
-      window.open(modelo)
+      window.open(this.itemModelo)
     },
     openModalJsonUpload() {
       this.openJsonUpload = true;
@@ -555,7 +553,7 @@ export default defineComponent({
       jsonFile: jsonFile,
       quasar: quasar,
       graphFromJson: graphFromJson,
-      itemModelo: "/public/modelo.json",
+      itemModelo: "../../public/modelo.json",
       rightDrawerOpen,
       toggleRightDrawer () {
         rightDrawerOpen.value = !rightDrawerOpen.value
