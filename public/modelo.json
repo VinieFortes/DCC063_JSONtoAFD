@@ -1,0 +1,7 @@
+{
+  "alphabet" : ["A", "B"],
+  "start_state" : "1",
+  "states": ["1", "2"],
+  "end_state": ["2"],
+  "function": ["(1,A,2)","(2,B,1)"]
+}
