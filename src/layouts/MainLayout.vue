@@ -502,7 +502,11 @@ export default defineComponent({
       const self = this;
 
       this.openJsonUpload = false;
-      this.$q.notify('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+      this.$q.notify({
+        message: "Arquivo .JSON importado com sucesso !",
+        icon: 'done',
+        color: 'positive'
+      })
       const reader = new FileReader();
       reader.onload = (event) => {
         const content = event.target.result;
