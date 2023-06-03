@@ -188,6 +188,7 @@ import {FontLoader} from 'three/addons/loaders/FontLoader.js';
 import ForceGraph from "force-graph";
 import {useQuasar} from "quasar";
 import modelo from "../../public/modelo.json"
+import { saveAs } from 'file-saver';
 export default defineComponent({
   name: 'MainLayout',
 
@@ -197,7 +198,11 @@ export default defineComponent({
 
   methods: {
     downloadModelo(){
-      window.open(this.itemModelo)
+      console.log('aaa')
+      const json = modelo;
+      const jsonString = JSON.stringify(json, null, 2);
+      const blob = new Blob([jsonString], { type: 'application/json' });
+      saveAs(blob, 'modelo.json');
     },
     openModalJsonUpload() {
       this.openJsonUpload = true;
